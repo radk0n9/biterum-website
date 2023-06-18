@@ -4,15 +4,32 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{ts,tsx}',
+    './public/**/*.html',
+    './node_modules/flowbite-react/**/*.js',
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        'gray-biterum1': '#202124',
+        'gray-biterum2': '#aeb0b7',
+        'gray-biterum3': '#a0a3ab',
+        'gray-biterum4': '#93969f',
+        'gray-biterum5': '#858993',
+        'gray-biterum6': '#787c87',
+        'gray-biterum7': '#6c6f7a',
+        'gray-biterum8': '#60636c',
+        'gray-biterum9': '#54575f',
+        'gray-biterum10': '#484a51',
+        'gray-biterum11': '#3c3e44',
+        'gray-biterum12': '#303136',
+        'gray-biterum13': '#242529',
+        'green-biterum': '#afcb08',
       },
+
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
