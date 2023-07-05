@@ -10,6 +10,9 @@ const customTheme = {
                 base: "max-w-6xl flex flex-wrap justify-between items-center container mx-auto",
             },
         },
+        brand : {
+            base: "flex items-center transition-all ease-in-out hover:scale-110 duration-300",
+        },
         toggle: {
             base: "inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden hover:bg-green-biterum focus:outline-none focus:ring-2 focus:ring-green-biterum",
         },        
