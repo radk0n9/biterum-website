@@ -1,4 +1,6 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,11 +9,16 @@ module.exports = {
     './pages/**/*.{ts,tsx}',
     './public/**/*.html',
     './node_modules/flowbite-react/**/*.js',
+    './src/**/*.{html,js}',
+    './node_modules/tw-elements/dist/js/**/*.js',
   ],
   theme: {
+    screens:{
+      "xs": "300px",
+      ...defaultTheme.screens,
+    },
     extend: {
       colors: {
-        'gray-biterum1': '#202124',
         'gray-biterum2': '#aeb0b7',
         'gray-biterum3': '#a0a3ab',
         'gray-biterum4': '#93969f',
@@ -24,12 +31,14 @@ module.exports = {
         'gray-biterum11': '#3c3e44',
         'gray-biterum12': '#303136',
         'gray-biterum13': '#242529',
+        'gray-biterum14': '#202124',
         'green-biterum': '#afcb08',
       },
-
     },
+   
   },
   plugins: [
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
+    require('tw-elements/dist/plugin'),
   ],
 }
