@@ -7,7 +7,7 @@ export default function Home() {
           <Carousel/>
         </div>
         <div>
-          <div className="transition-all ease-in-out md:hover:translate-x-12 sm:hover:translate-x-0 md:hover:scale-110 sm:hover:scale-0 duration-700 py-6"> 
+          <div className="transition-all ease-in-out md:hover:translate-x-12 md:hover:scale-110 sm:hover:scale-0 duration-700 py-6"> 
             <button disabled className="font-bold text-xl">Najwyższej jakości sklejka do cięcia laserem</button>
           </div>
           <p className="text-base text-justify leading-6 mb-2">Prowadzimy naszą firmę w Poznaniu. Zajmujemy się bezpośrednim importem i dystrybucją specjalistycznych produktów ze sklejki wytwarzanej w Europie. Jako producent sklejki na wymiar oferujemy lekkie brzozowe, brzozowo-świerkowe, topolowe oraz egzotyczne płyty sklejkowe, które charakteryzują się wysoką estetyką, jak również starannie szlifowanymi powierzchniami.</p>
@@ -15,7 +15,7 @@ export default function Home() {
           <p className="text-base text-justify leading-6mb-2">Płyta ze sklejki brzozowej do cięcia laserem pozwala na tworzenie bardzo estetycznych wyrobów, wykrojników i decoupage w każdym wymiarze. Płyty do formowania na gorąco pozwalają na przykład uzyskać różne kształty elementów mebli i wyposażenia wnętrz. Importowane przez nas produkty najwyższej jakości doskonale nadają się do tworzenia opakowań transportowych, ozdobnych oraz stanowią doskonały surowiec dla wszelkiego typu innych produktów.</p>
         </div>
       <div>
-          <div className="transition-all ease-in-out md:hover:translate-x-12 sm:hover:translate-x-0 md:hover:scale-110 sm:hover:scale-0 duration-700 py-6"> 
+          <div className="transition-all ease-in-out md:hover:translate-x-12 md:hover:scale-110 sm:hover:scale-0 duration-700 py-6"> 
             <button disabled className="font-bold text-xl">Naturalny materiał</button>
           </div>
           <p className="text-base text-justify leading-6 mb-2">Nasze płyty BIT-LASER nadają się idealnie do precyzyjnych cięć laserem. Są zaprojektowane i zoptymalizowane specjalnie do tego typu cięcia, jak i do formowania na gorąco. Posiadamy m.in. sklejki:</p>
@@ -25,7 +25,7 @@ export default function Home() {
           </ul>
       </div>
       <div>
-          <div className="transition-all ease-in-out md:hover:translate-x-12 sm:hover:translate-x-0 md:hover:scale-110 sm:hover:scale-0 duration-700 pt-8 pb-6 text-center"> 
+          <div className="transition-all ease-in-out md:hover:scale-110 sm:hover:scale-0 duration-700 pt-8 pb-6 text-center"> 
             <button disabled className="font-bold text-xl">Nasze produkty znajdują zastosowanie w następujących dziedzinach:</button>
           </div>
           <div className="grid lg:md:grid-cols-3 lg:md:gap-16 lg:md:mt-2 sm:mt-4 sm:grid-cols-1 sm:gap-6">
