@@ -17,6 +17,10 @@ module.exports = {
       "xs": "300px",
       ...defaultTheme.screens,
     },
+    listStyleType: {
+      "square": "square",
+      ...defaultTheme.listStyleType,
+    },
     extend: {
       colors: {
         'gray-biterum2': '#aeb0b7',

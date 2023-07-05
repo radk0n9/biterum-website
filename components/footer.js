@@ -16,10 +16,16 @@ const customTheme = {
             base: "flex flex-wrap text-sm text-gray-biterum8 dark:text-white"
         },
         title: {
-            base: "mb-3 text-base font-bold uppercase text-gray-biterum8 dark:text-white lg:md:mt-2 xs:mt-5"
+            base: "mb-3 text-base font-bold uppercase text-gray-biterum8 dark:text-white lg:md:mt-2 mt-5"
+        },
+        copyright: {
+            base: "text-sm font-semibold text-gray-biterum4 sm:text-center",
+            href: "ml-1 hover:underline hover:text-green-biterum",
+            span: "ml-1"
         },
         brand: {
-            img: "mr-3 h-10"
+            img: "mr-3 h-10",
+            span: "",
         }
     }
 }
@@ -30,8 +36,8 @@ export default function defaultFooter(){
         <Flowbite theme={{theme: customTheme}}>
             <Footer container>
                 <div className="w-full text-center">
-                    <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-                        <div className="mb-4 flex items-center sm:mb-0">
+                    <div className="grid w-full lg:md:justify-evenly md:flex md:grid-cols-1">
+                        <div className="lg:md:mb-4 flex items-center lg:md:mx-0 mx-auto">
                             <Footer.Brand 
                                 src="/biterum-logo.png"
                                 alt="biterum-logo"
@@ -113,6 +119,12 @@ export default function defaultFooter(){
                         </div>
                         </Footer.LinkGroup>
                     </div>
+                    <Footer.Divider/>
+                    <Footer.Copyright
+                        by="Konrad Pawelec"
+                        href="https://www.linkedin.com/in/konrad-pawelec/"
+                        year={2023}
+                    />
                 </div>
             </Footer>
         </Flowbite>
