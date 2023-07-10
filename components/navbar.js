@@ -17,6 +17,12 @@ const customTheme = {
             base: "inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden hover:bg-green-biterum focus:outline-none focus:ring-2 focus:ring-green-biterum",
         },        
    },
+   dropdown: {
+        floating: {
+            base: "z-10 w-fit rounded-lg divide-y divide-gray-100 shadow focus:outline-none",
+            content: "py-1 font-normal rounded-lg",
+        },
+   }
 }
 
 export default function defaultNavbar(){
@@ -37,7 +43,7 @@ export default function defaultNavbar(){
                     <div className="flex flex-col font-semibold text-base pt-2 pb-3 px-4 md:p-0 mt-2 border border-green-biterum rounded-lg bg-background-biterum/30 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-biterum14">
                         <Navbar.Link href="/" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-biterum2 md:bg-transparent md:hover:text-green-biterum md:text-white md:p-0" aria-current="page">Główna</Navbar.Link>
                         <div className="flex py-2 pl-3 pr-4 text-white border-b border-gray-100 rounded hover:bg-gray-biterum2 md:hover:text-green-biterum md:hover:bg-transparent md:border-0 md:text-white md:p-0">
-                            <Dropdown inline={true} label="Produkty" className="z-10 font-normal rounded-lg shadow w-44">
+                            <Dropdown inline label="Produkty">
                                 <Dropdown.Item href="#" className="block px-4 py-2 hover:text-green-biterum">
                                     Produkt1
                                 </Dropdown.Item>
