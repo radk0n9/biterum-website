@@ -120,11 +120,10 @@ export default function defaultFooter(){
                         </Footer.LinkGroup>
                     </div>
                     <Footer.Divider/>
-                    <Footer.Copyright
-                        by="Konrad Pawelec"
-                        href="https://www.linkedin.com/in/konrad-pawelec/"
-                        year={2023}
-                    />
+                    <div className="text-sm font-semibold text-gray-biterum4 sm:text-center">
+                        © 2023
+                        <a href="https://www.linkedin.com/in/konrad-pawelec/" target="_blank" className="ml-1 hover:underline hover:text-green-biterum">Konrad Pawelec</a>
+                    </div>
                 </div>
             </Footer>
         </Flowbite>
