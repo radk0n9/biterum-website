@@ -37,6 +37,7 @@ module.exports = {
         'gray-biterum13': '#242529',
         'gray-biterum14': '#202124',
         'green-biterum': '#afcb08',
+        'background-biterum': '#dadada70',
       },
     },
    

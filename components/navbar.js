@@ -7,7 +7,7 @@ const customTheme = {
         root: {
             base: "",
             inner: {
-                base: "max-w-6xl flex flex-wrap justify-between items-center container mx-auto",
+                base: "max-w-6xl flex flex-wrap justify-between items-center container mx-auto px-3 lg:px-0",
             },
         },
         brand : {
@@ -34,7 +34,7 @@ export default function defaultNavbar(){
                 </Navbar.Brand>
                 <Navbar.Toggle/>
                 <Navbar.Collapse>
-                    <div className="flex flex-col font-semibold text-base p-4 md:p-0 mt-4 border border-green-biterum rounded-lg bg-gray-biterum9 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-biterum14">
+                    <div className="flex flex-col font-semibold text-base pt-2 pb-3 px-4 md:p-0 mt-2 border border-green-biterum rounded-lg bg-background-biterum/30 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-biterum14">
                         <Navbar.Link href="/" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-biterum2 md:bg-transparent md:hover:text-green-biterum md:text-white md:p-0" aria-current="page">Główna</Navbar.Link>
                         <div className="flex py-2 pl-3 pr-4 text-white border-b border-gray-100 rounded hover:bg-gray-biterum2 md:hover:text-green-biterum md:hover:bg-transparent md:border-0 md:text-white md:p-0">
                             <Dropdown inline={true} label="Produkty" className="z-10 font-normal rounded-lg shadow w-44">

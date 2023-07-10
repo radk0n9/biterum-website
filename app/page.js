@@ -19,7 +19,7 @@ export default function Home() {
             <button disabled className="font-bold text-xl">Naturalny materiał</button>
           </div>
           <p className="text-base text-justify leading-6 mb-2">Nasze płyty BIT-LASER nadają się idealnie do precyzyjnych cięć laserem. Są zaprojektowane i zoptymalizowane specjalnie do tego typu cięcia, jak i do formowania na gorąco. Posiadamy m.in. sklejki:</p>
-          <ul className="list-disc list-outside ml-10">
+          <ul className="list-disc list-outside md:ml-10 ml-4">
             <li className="text-base text-justify leading-6 mb-2">brzozowe i topolowe – to najpopularniejsze materiały wykorzystywane do wycinania laserem ozdób, dekoracji czy oryginalnych materiałów reklamowych. Są nie tylko naturalne, ale bardzo trwałe mimo swojej lekkości, a także niezwykle łatwe w obróbce. Należy je jednak stosować w warunkach suchych oraz unikać wilgoci. Możesz na nich uzyskać grawer od jasnego do ciemnobrązowego w zależności od ustawień lasera, którym operujesz. Nadają się do dokładnego wycięcia naw nawet bardzo skomplikowanych wzorów.</li>
             <li className="text-base text-justify leading-6 mb-2">świerkowe nadadzą się doskonale to tworzenia lekkich konstrukcji narażonych na obciążenia. Sprawdzą się w konstrukcjach zadaszeń, a także jako materiał podłogowy czy ozdobne opakowanie. Płyty wykorzystywane są w stolarce budowlanej i meblowej.</li>
           </ul>
@@ -29,7 +29,7 @@ export default function Home() {
             <button disabled className="font-bold text-xl">Nasze produkty znajdują zastosowanie w następujących dziedzinach:</button>
           </div>
           <div className="grid lg:md:grid-cols-3 lg:md:gap-16 lg:md:mt-2 sm:mt-4 sm:grid-cols-1 sm:gap-6">
-            <ul className="list-disc list-outside ml-20">
+            <ul className="text-base list-disc list-outside md:ml-20 ml-10">
               <li className="mb-1">cięcie laserem:
                 <ul className="list-square list-outside ml-7">
                   <li>wykrojniki poligraficzne;</li>
@@ -40,7 +40,7 @@ export default function Home() {
               <li className="mb-1">obróbka CNC;</li>
               <li className="mb-1">produkcja opakowań transportowych;</li>
             </ul>
-            <ul className="list-disc list-outside ml-20">
+            <ul className="list-disc list-outside md:ml-20 ml-10">
               <li className="mb-1">żelbety:
                 <ul className="list-square list-outside ml-7">
                   <li>formy w budownictwie żelbetowym;</li>
@@ -56,7 +56,7 @@ export default function Home() {
                 </ul>
               </li>
             </ul>
-            <ul className="list-disc list-outside ml-20">
+            <ul className="list-disc list-outside md:ml-20 ml-10">
               <li className="mb-1">zabudowy transportowe:
                 <ul className="list-square list-outside ml-7">
                   <li>skrzyniowe;</li>
