@@ -1,6 +1,13 @@
-import Carousel from "../components/carousel";
+
+import Carousel from '@/components/carousel';
+import {getItems} from '@/components/itemsM';
+import Card from '@/components/card';
+
+const allItems = getItems()
 
 export default function Home() {
+  //const [isShown, setIsShown] = useState(false);
+  
   return (
     <div className="">
         <div className="pt-4 pb-6 h-56 sm:h-64 xl:h-80 2xl:h-96">
@@ -23,6 +30,17 @@ export default function Home() {
             <li className="text-base text-justify leading-6 mb-2">brzozowe i topolowe – to najpopularniejsze materiały wykorzystywane do wycinania laserem ozdób, dekoracji czy oryginalnych materiałów reklamowych. Są nie tylko naturalne, ale bardzo trwałe mimo swojej lekkości, a także niezwykle łatwe w obróbce. Należy je jednak stosować w warunkach suchych oraz unikać wilgoci. Możesz na nich uzyskać grawer od jasnego do ciemnobrązowego w zależności od ustawień lasera, którym operujesz. Nadają się do dokładnego wycięcia naw nawet bardzo skomplikowanych wzorów.</li>
             <li className="text-base text-justify leading-6 mb-2">świerkowe nadadzą się doskonale to tworzenia lekkich konstrukcji narażonych na obciążenia. Sprawdzą się w konstrukcjach zadaszeń, a także jako materiał podłogowy czy ozdobne opakowanie. Płyty wykorzystywane są w stolarce budowlanej i meblowej.</li>
           </ul>
+      </div>
+      <div className="grid lg:md:grid-cols-3 lg:md:gap-6 lg:md:my-10 sm:mt-4 sm:grid-cols-1 sm:gap-6" >
+        {allItems.map((item)=>
+          <Card
+            title={item.data.title}
+            content={item.content}
+            image={item.data.image}
+          />
+        )}
+        {/* <button onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>setIsShown(false)}>Test</button>
+        {isShown && console.log("test")} */}
       </div>
       <div>
           <div className="transition-all ease-in-out md:hover:scale-110 sm:hover:scale-0 duration-700 pt-8 pb-6 text-center"> 
@@ -70,3 +88,12 @@ export default function Home() {
     </div>
   )
 }
+
+// export async function getInitialProps() {
+//   const allItems = getItems();
+//   return {
+//     props: {
+//       allItems,
+//     },
+//   };
+// }

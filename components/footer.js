@@ -1,9 +1,9 @@
 'use client'
 
-import { Footer, Flowbite } from "flowbite-react";
-import Image from "next/image";
-import phoneIcon from "@/components/icons/phone.svg";
-import mailIcon from "@/components/icons/mail.svg";
+import { Footer, Flowbite } from 'flowbite-react';
+import Image from 'next/image';
+import phoneIcon from '@/public/icons/phone.svg';
+import mailIcon from '@/public/icons/mail.svg';
 
 const customTheme = {
     footer: {
