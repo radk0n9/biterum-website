@@ -2,12 +2,10 @@ import Carousel from '@/components/carousel';
 import { getItems } from '@/components/itemsM';
 import Card from '@/components/card';
 import { v4 as uuidv4} from 'uuid';
-// import { useState} from 'react';
-
-const allItems = getItems()
 
 export default function Home() {
-  
+  const allItems = getItems()
+
   return (
     <div className="">
         <div className="pt-4 pb-6 h-56 sm:h-64 xl:h-80 2xl:h-96">
@@ -40,8 +38,6 @@ export default function Home() {
             image={item.data.image}
           />
         )}
-        {/* <button onMouseEnter={()=>setIsShown(true)} onMouseLeave={()=>setIsShown(false)}>Test</button>
-        {isShown && console.log("test")} */}
       </div>
       <div>
           <div className="transition-all ease-in-out md:hover:scale-110 sm:hover:scale-0 duration-700 pt-8 pb-6 text-center"> 
@@ -89,12 +85,3 @@ export default function Home() {
     </div>
   )
 }
-
-// export async function getInitialProps() {
-//   const allItems = getItems();
-//   return {
-//     props: {
-//       allItems,
-//     },
-//   };
-// }

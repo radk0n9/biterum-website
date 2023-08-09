@@ -30,7 +30,6 @@ const customTheme = {
     }
 }
 
-
 export default function defaultFooter(){
     return (
         <Flowbite theme={{theme: customTheme}}>
