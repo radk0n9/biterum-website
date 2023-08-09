@@ -14,11 +14,11 @@ module.exports = {
   ],
   theme: {
     screens:{
-      "xs": "300px",
+      'xs': '300px',
       ...defaultTheme.screens,
     },
     listStyleType: {
-      "square": "square",
+      'square': 'square',
       ...defaultTheme.listStyleType,
     },
     extend: {
@@ -39,6 +39,12 @@ module.exports = {
         'green-biterum': '#afcb08',
         'background-biterum': '#dadada70',
       },
+      transitionProperty: {
+        'style-preserve-3d': 'transform-style: preserve-3d',
+      },
+      boxShadow: {
+        'upside-down-md': '0 0px 0px -1px rgb(0 0 0 / 0.1), 0 -6px 4px -2px rgb(0 0 0 / 0.1)',
+      }
     },
    
   },

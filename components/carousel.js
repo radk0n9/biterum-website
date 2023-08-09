@@ -1,5 +1,5 @@
 'use client';
-import { Carousel, Flowbite, Footer } from 'flowbite-react';
+import { Carousel, Flowbite } from 'flowbite-react';
 import Image from 'next/image';
 
 const customTheme = {

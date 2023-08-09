@@ -1,12 +1,12 @@
-
 import Carousel from '@/components/carousel';
-import {getItems} from '@/components/itemsM';
+import { getItems } from '@/components/itemsM';
 import Card from '@/components/card';
+import { v4 as uuidv4} from 'uuid';
+// import { useState} from 'react';
 
 const allItems = getItems()
 
 export default function Home() {
-  //const [isShown, setIsShown] = useState(false);
   
   return (
     <div className="">
@@ -31,9 +31,10 @@ export default function Home() {
             <li className="text-base text-justify leading-6 mb-2">świerkowe nadadzą się doskonale to tworzenia lekkich konstrukcji narażonych na obciążenia. Sprawdzą się w konstrukcjach zadaszeń, a także jako materiał podłogowy czy ozdobne opakowanie. Płyty wykorzystywane są w stolarce budowlanej i meblowej.</li>
           </ul>
       </div>
-      <div className="grid lg:md:grid-cols-3 lg:md:gap-6 lg:md:my-10 sm:mt-4 sm:grid-cols-1 sm:gap-6" >
+      <div className="grid lg:md:grid-cols-3 sm:grid-cols-1 lg:md:gap-x-6 lg:md:gap-y-10 lg:md:my-10 sm:my-4 sm:gap-6 justify-items-center gap-4 grid-cols-1 my-2">
         {allItems.map((item)=>
           <Card
+            key={uuidv4()}
             title={item.data.title}
             content={item.content}
             image={item.data.image}
@@ -48,38 +49,38 @@ export default function Home() {
           </div>
           <div className="grid lg:md:grid-cols-3 lg:md:gap-16 lg:md:mt-2 sm:mt-4 sm:grid-cols-1 sm:gap-6">
             <ul className="text-base list-disc list-outside md:ml-20 ml-10">
-              <li className="mb-1">cięcie laserem:
+              <li className="mb-1" key={uuidv4()}>cięcie laserem:
                 <ul className="list-square list-outside ml-7">
-                  <li>wykrojniki poligraficzne;</li>
-                  <li>decoupage;</li>
-                  <li>ozdobne opakowania;</li>
+                  <li key={uuidv4()}>wykrojniki poligraficzne;</li>
+                  <li key={uuidv4()}>decoupage;</li>
+                  <li key={uuidv4()}>ozdobne opakowania;</li>
                 </ul>
               </li>
-              <li className="mb-1">obróbka CNC;</li>
-              <li className="mb-1">produkcja opakowań transportowych;</li>
+              <li className="mb-1" key={uuidv4()}>obróbka CNC;</li>
+              <li className="mb-1" key={uuidv4()}>produkcja opakowań transportowych;</li>
             </ul>
             <ul className="list-disc list-outside md:ml-20 ml-10">
-              <li className="mb-1">żelbety:
+              <li className="mb-1" key={uuidv4()}>żelbety:
                 <ul className="list-square list-outside ml-7">
-                  <li>formy w budownictwie żelbetowym;</li>
-                  <li>prefabrykaty betonowe;</li>
+                  <li key={uuidv4()}>formy w budownictwie żelbetowym;</li>
+                  <li key={uuidv4()}>prefabrykaty betonowe;</li>
                 </ul>
               </li>
-              <li className="mb-1">lekkie konstrukcje zewnętrzne i wewnętrzne:
+              <li className="mb-1" key={uuidv4()}>lekkie konstrukcje zewnętrzne i wewnętrzne:
                 <ul className="list-square list-outside ml-7">
-                  <li>stoiska targowe;</li>
-                  <li>budynki drewniane;</li>
-                  <li>ścianki działowe;</li>
-                  <li>estrady, podesty;</li>
+                  <li key={uuidv4()}>stoiska targowe;</li>
+                  <li key={uuidv4()}>budynki drewniane;</li>
+                  <li key={uuidv4()}>ścianki działowe;</li>
+                  <li key={uuidv4()}>estrady, podesty;</li>
                 </ul>
               </li>
             </ul>
             <ul className="list-disc list-outside md:ml-20 ml-10">
-              <li className="mb-1">zabudowy transportowe:
+              <li className="mb-1" key={uuidv4()}>zabudowy transportowe:
                 <ul className="list-square list-outside ml-7">
-                  <li>skrzyniowe;</li>
-                  <li>przyczepy;</li>
-                  <li>naczepy.</li>
+                  <li key={uuidv4()}>skrzyniowe;</li>
+                  <li key={uuidv4()}>przyczepy;</li>
+                  <li key={uuidv4()}>naczepy.</li>
                 </ul>
               </li>
             </ul>
