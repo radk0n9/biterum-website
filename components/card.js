@@ -13,15 +13,6 @@ const customTheme = {
         }
     }
 }
-// transition-all ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-green-biterum duration-300
-const customThemeMouse = {
-    card: {
-        root: {
-            base: "lg:md:sm:max-w-md max-w-[16rem] flex rounded-full border border-gray-200 shadow-md transition-all rotate-180 z-10 hover:shadow",
-            children: "flex flex-col justify-center gap-4 lg:md:sm:mx-14 lg:md:sm:h-[22rem] lg:md:sm:w-[16rem] mx-6 h-[16rem]"
-        }
-    }
-}
 
 export default function CardWithImageAndButoon(props){
 
