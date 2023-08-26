@@ -7,7 +7,7 @@ export default function Home() {
   const allItems = getItems();
 
   return (
-    <div className="">
+    <>
       <div className="pt-4 pb-6 h-56 sm:h-64 xl:h-80 2xl:h-96">
         <Carousel />
       </div>
@@ -79,6 +79,7 @@ export default function Home() {
             title={item.data.title}
             content={item.content}
             image={item.data.image}
+            //odnosnik href do strony
           />
         ))}
       </div>
@@ -135,6 +136,6 @@ export default function Home() {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 }

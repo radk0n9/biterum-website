@@ -37,6 +37,7 @@ module.exports = {
         'gray-biterum13': '#242529',
         'gray-biterum14': '#202124',
         'green-biterum': '#afcb08',
+        'greend-biterum': '#90a808',
         'background-biterum': '#dadada70',
       },
       transitionProperty: {

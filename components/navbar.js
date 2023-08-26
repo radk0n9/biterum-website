@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
 import { Dropdown, Navbar, Flowbite } from "flowbite-react";
+import { useState } from "react";
 
 const customTheme = {
   navbar: {
     root: {
       base: "",
       inner: {
-        base: "max-w-6xl flex flex-wrap justify-between items-center container mx-auto px-3 lg:px-0",
+        base: "max-w-6xl flex flex-wrap justify-between items-center container mx-auto px-3",
       },
     },
     brand: {
@@ -26,6 +27,18 @@ const customTheme = {
 };
 
 export default function defaultNavbar() {
+
+  // const [show, updateShow] = useState(false);
+
+  // function handleMouseEnter() {
+  //   updateShow(true)
+  // }
+
+  // function handleMouseLeave() {
+  //   updateShow(false);
+  // }
+  
+
   return (
     <Flowbite theme={{ theme: customTheme }}>
       <Navbar className="bg-gray-biterum14 mx-auto py-2">

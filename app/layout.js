@@ -17,13 +17,11 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="pl" className={poppins.className}>
-      <body className="antialiased">
+      <body className="box-border antialiased">
         <Navbar />
-        <div className="max-w-6xl mx-4 mt-8 mb-40 flex flex-col md:flex-row lg:mx-auto">
-          <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+          <main className="max-w-6xl mx-auto my-0 mt-8 mb-40 px-2">
             {children}
           </main>
-        </div>
         <Footer />
       </body>
     </html>
