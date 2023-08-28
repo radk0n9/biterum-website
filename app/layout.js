@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
     <html lang="pl" className={poppins.className}>
       <body className="box-border antialiased">
         <Navbar />
-          <main className="max-w-6xl mx-auto my-0 mt-8 mb-40 px-2">
-            {children}
-          </main>
+        <main className="max-w-6xl mx-auto my-0 mt-8 mb-40 px-2">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

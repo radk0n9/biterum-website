@@ -8,7 +8,7 @@ import { useState } from "react";
 const customTheme = {
   card: {
     root: {
-      base: "lg:md:max-w-md max-w-[16rem] flex rounded-full border border-gray-200 bg-white shadow-md lg;lg:md:hover:shadow-upside-down-md lg:md:overflow-hidden lg:md:cursor-pointer transition-all duration-700 lg:md:hover:rotate-180 lg:md:hover:transition-style-preserve-3d hover:bg-green-biterum",
+      base: "lg:md:max-w-md max-w-[16rem] flex rounded-full border border-gray-200 bg-white shadow-md lg:md:hover:shadow-upside-down-md lg:md:overflow-hidden transition-all duration-700 lg:md:hover:rotate-180 lg:md:hover:transition-style-preserve-3d hover:bg-green-biterum",
       children:
         "flex flex-col justify-center gap-4 lg:md:mx-14 mx-10 lg:md:hover:mx-14 lg:md:h-[22rem] h-[16rem]",
     },
@@ -31,43 +31,51 @@ const checkMobile = () => {
   } finally {
     null;
   }
-}
+};
 
-checkMobile()
+checkMobile();
 
 export default function CardWithImageAndButoon(props) {
   const [show, updateShow] = useState(false);
-  const [isMobile, setMobile] = useState(false);
 
   const debounceMouse = debounce(() => updateShow(true), 300);
   const debounceMobile = debounce(() => updateShow(false), 2000);
 
-  const handleMouseEnter = () => {debounceMouse()};
+  const handleMouseEnter = () => {
+    debounceMouse();
+  };
 
   const handleMouseLeave = () => {
     updateShow(false);
     debounceMouse.clear();
-  }
+  };
 
   const handleClickMobile = () => {
     updateShow(true);
     debounceMobile();
-  }
+  };
 
   return (
     <>
       <Flowbite theme={{ theme: customTheme }}>
-
-        {/* {checkMobile() ? console.log("Mobile") : console.log("PC")} */}
-        <button
-          onClick={() => {checkMobile() ? handleClickMobile() : null}}
-          onMouseEnter={() => {checkMobile() ? console.log("nic nie robię 1") : handleMouseEnter()}}
-          onMouseLeave={() => {checkMobile() ? console.log("nic nie robię 2") : handleMouseLeave()}}
+        <article
+          onClick={() => {
+            checkMobile() ? handleClickMobile() : null;
+          }}
+          onMouseEnter={() => {
+            checkMobile() ? console.log("nic nie robię 1") : handleMouseEnter();
+          }}
+          onMouseLeave={() => {
+            checkMobile() ? console.log("nic nie robię 2") : handleMouseLeave();
+          }}
         >
           <Card>
             {show ? (
               <div className="inset-0 transition-all z-10 lg:md:rotate-180 lg:md:w-[16rem] w-[11rem] text-center">
-                <a href="#" className="lg:md:text-xl text-md font-bold tracking-tight bg-greend-biterum hover:bg-white text-center border-2 border-transparent p-4 rounded-full">
+                <a
+                  href="#"
+                  className="lg:md:text-xl text-md font-bold tracking-tight bg-greend-biterum hover:bg-white text-center border-2 border-transparent p-2 rounded-full cursor-pointer "
+                >
                   Przeczytaj więcej
                 </a>
               </div>
@@ -89,7 +97,7 @@ export default function CardWithImageAndButoon(props) {
               </div>
             )}
           </Card>
-        </button>
+        </article>
       </Flowbite>
     </>
   );

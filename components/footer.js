@@ -129,7 +129,6 @@ export default function defaultFooter() {
                       <p>61-003 Poznań</p>
                       <p className="">NIP 972-124-56-30</p>
                     </div>
-                    {/* <hr className="max-w-[50%] m-auto h-px border-gray-biterum8"/> */}
                     <div className="grid grid-row-4 gap-1 text-sm text-left flex">
                       <p className="font-semibold">MAGAZYN</p>
                       <p>ul. Św. Wincentego 10</p>

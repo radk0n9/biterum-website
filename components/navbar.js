@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { Dropdown, Navbar, Flowbite } from "flowbite-react";
-import { useState } from "react";
 
 const customTheme = {
   navbar: {
@@ -27,18 +26,7 @@ const customTheme = {
 };
 
 export default function defaultNavbar() {
-
-  // const [show, updateShow] = useState(false);
-
-  // function handleMouseEnter() {
-  //   updateShow(true)
-  // }
-
-  // function handleMouseLeave() {
-  //   updateShow(false);
-  // }
   
-
   return (
     <Flowbite theme={{ theme: customTheme }}>
       <Navbar className="bg-gray-biterum14 mx-auto py-2">
@@ -53,7 +41,7 @@ export default function defaultNavbar() {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <div className="flex flex-col font-semibold text-base pt-2 pb-3 px-4 md:p-0 mt-2 border border-green-biterum rounded-lg bg-background-biterum/30 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-biterum14">
+          <div className="flex flex-col font-medium 2xl:font-semibold text-base pt-2 pb-3 px-4 md:p-0 mt-2 border border-green-biterum rounded-lg bg-background-biterum/30 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-biterum14">
             <Navbar.Link
               href="/"
               className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-biterum2 md:bg-transparent md:hover:text-green-biterum md:text-white md:p-0"
@@ -85,19 +73,19 @@ export default function defaultNavbar() {
             </div>
             <Navbar.Link
               href="/galeria"
-              className="block py-2 pl-3 pr-4 text-white rounded  hover:bg-gray-biterum2 md:hover:bg-transparent md:border-0 md:hover:text-green-biterum md:p-0"
+              className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-biterum2 md:hover:bg-transparent md:border-0 md:hover:text-green-biterum md:p-0"
             >
               Galeria
             </Navbar.Link>
             <Navbar.Link
               href="/faq"
-              className="block py-2 pl-3 pr-4 text-white rounded  hover:bg-gray-biterum2 md:hover:bg-transparent md:border-0 md:hover:text-green-biterum md:p-0"
+              className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-biterum2 md:hover:bg-transparent md:border-0 md:hover:text-green-biterum md:p-0"
             >
               FAQ
             </Navbar.Link>
             <Navbar.Link
               href="/kontakt"
-              className="block py-2 pl-3 pr-4 text-white rounded  hover:bg-gray-biterum2 md:hover:bg-transparent md:border-0 md:hover:text-green-biterum md:p-0"
+              className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-biterum2 md:hover:bg-transparent md:border-0 md:hover:text-green-biterum md:p-0"
             >
               Kontakt
             </Navbar.Link>
