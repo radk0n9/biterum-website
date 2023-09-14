@@ -1,6 +1,7 @@
 import { getPosts } from "./get-posts";
 import fs from "fs";
 import Image from "next/image";
+import { v4 as uuidv4 } from "uuid";
 
 export default function News() {
   const allPosts = getPosts();
@@ -22,7 +23,7 @@ export default function News() {
       </div>
       <div className="flex flex-col gap-14">
         {allPosts.map((post, index) => (
-          <article className="grid grid-cols-2 gap-6">
+          <article key={uuidv4()} className="grid grid-cols-2 gap-6">
             <div className={`flex flex-col gap-3 ${index % 2 === 0? "order-1" : "order-2"}`}>
               <p className="text-xs italic">{post.data.date}</p>
               <h2 className="text-lg font-semibold">{post.data.title}</h2>
@@ -41,6 +42,7 @@ export default function News() {
                         width={600}
                         height={600}
                         className="max-h-[19rem]"
+                        key={uuidv4()}
                       />
                     ))}
               </div>
@@ -56,6 +58,7 @@ export default function News() {
                         width={500}
                         height={500}
                         className="max-h-36 object-cover"
+                        key={uuidv4()}
                       />
                     ))}
               </div>
