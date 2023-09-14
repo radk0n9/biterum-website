@@ -5,3 +5,8 @@
 body {
   background-color: #dadada70;
 }
+
+.card-bg-color:hover {
+  background-color: #afcb08;
+  background-image: linear-gradient(160deg, #afcb08 0%, #6c7e00 100%);
+}

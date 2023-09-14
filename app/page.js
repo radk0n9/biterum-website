@@ -5,16 +5,15 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function Home() {
   const allItems = getItems();
-
   return (
     <>
-      <div className="pt-4 pb-6 h-56 sm:h-64 xl:h-80 2xl:h-96">
+      <article className="pt-4 pb-6 h-56 sm:h-64 xl:h-80 2xl:h-96">
         <Carousel />
-      </div>
-      <div>
-        <div className="transition-all ease-in-out md:hover:translate-x-12 md:hover:scale-110 sm:hover:scale-0 duration-700 py-6">
+      </article>
+      <article>
+        <div className="transition ease-in-out duration-500 md:hover:translate-x-24 md:hover:scale-[1.2] sm:hover:scale-0 py-6">
           <button disabled className="font-bold text-xl">
-            Najwyższej jakości sklejka do cięcia laserem
+            <h1>Najwyższej jakości sklejka do cięcia laserem</h1>
           </button>
         </div>
         <p className="text-base text-justify leading-6 mb-2">
@@ -41,11 +40,11 @@ export default function Home() {
           opakowań transportowych, ozdobnych oraz stanowią doskonały surowiec
           dla wszelkiego typu innych produktów.
         </p>
-      </div>
-      <div>
-        <div className="transition-all ease-in-out md:hover:translate-x-12 md:hover:scale-110 sm:hover:scale-0 duration-700 py-6">
+      </article>
+      <article>
+        <div className="transition ease-in-out duration-500 md:hover:translate-x-24 md:hover:scale-[1.2] sm:hover:scale-0 py-6">
           <button disabled className="font-bold text-xl">
-            Naturalny materiał
+            <h1>Naturalny materiał</h1>
           </button>
         </div>
         <p className="text-base text-justify leading-6 mb-2">
@@ -71,8 +70,8 @@ export default function Home() {
             wykorzystywane są w stolarce budowlanej i meblowej.
           </li>
         </ul>
-      </div>
-      <div className="grid lg:md:grid-cols-3 sm:grid-cols-1 lg:md:gap-x-6 lg:md:gap-y-10 lg:md:my-10 sm:my-4 sm:gap-6 justify-items-center gap-4 grid-cols-1 my-2">
+      </article>
+      <article className="grid md:grid-cols-3 sm:grid-cols-1 md:gap-x-6 md:gap-y-10 :md:my-10 sm:my-4 sm:gap-6 justify-items-center gap-4 grid-cols-1 my-2">
         {allItems.map((item) => (
           <Card
             key={uuidv4()}
@@ -82,14 +81,14 @@ export default function Home() {
             //odnosnik href do strony
           />
         ))}
-      </div>
-      <div>
-        <div className="transition-all ease-in-out md:hover:scale-110 sm:hover:scale-0 duration-700 pt-8 pb-6 text-center">
+      </article>
+      <article>
+        <div className="transition ease-in-out md:hover:scale-[1.2] sm:hover:scale-0 duration-500 pt-8 pb-6 text-center">
           <button disabled className="font-bold text-xl">
             Nasze produkty znajdują zastosowanie w następujących dziedzinach:
           </button>
         </div>
-        <div className="grid lg:md:grid-cols-3 lg:md:gap-16 lg:md:mt-2 sm:mt-4 sm:grid-cols-1 sm:gap-6">
+        <div className="grid md:grid-cols-3 md:gap-16 md:mt-2 sm:mt-4 sm:grid-cols-1 sm:gap-6">
           <ul className="text-base list-disc list-outside md:ml-20 ml-10">
             <li className="mb-1" key={uuidv4()}>
               cięcie laserem:
@@ -135,7 +134,7 @@ export default function Home() {
             </li>
           </ul>
         </div>
-      </div>
+      </article>
     </>
   );
 }

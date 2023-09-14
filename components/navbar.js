@@ -7,7 +7,7 @@ const customTheme = {
     root: {
       base: "",
       inner: {
-        base: "max-w-6xl flex flex-wrap justify-between items-center container mx-auto px-3",
+        base: "max-w-6xl flex flex-wrap justify-between items-center container mx-auto px-2 md:px-6",
       },
     },
     brand: {
@@ -26,6 +26,10 @@ const customTheme = {
 };
 
 export default function defaultNavbar() {
+
+  const handleMouseEnter = () => {
+    console.log("test")
+  }
   
   return (
     <Flowbite theme={{ theme: customTheme }}>
@@ -44,12 +48,20 @@ export default function defaultNavbar() {
           <div className="flex flex-col font-medium 2xl:font-semibold text-base pt-2 pb-3 px-4 md:p-0 mt-2 border border-green-biterum rounded-lg bg-background-biterum/30 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-biterum14">
             <Navbar.Link
               href="/"
-              className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-biterum2 md:bg-transparent md:hover:text-green-biterum md:text-white md:p-0"
+              className="block py-2 pl-3 pr-4 transition-colors easy-in-out duration-300 text-white rounded hover:bg-gray-biterum2 md:bg-transparent md:hover:text-green-biterum md:text-white md:p-0"
               aria-current="page"
             >
               Główna
             </Navbar.Link>
-            <div className="flex py-2 pl-3 pr-4 text-white border-b border-gray-100 rounded hover:bg-gray-biterum2 md:hover:text-green-biterum md:hover:bg-transparent md:border-0 md:text-white md:p-0">
+            <Navbar.Link
+              href="/aktualnosci"
+              className="block py-2 pl-3 pr-4 transition-colors easy-in-out duration-300 text-white rounded hover:bg-gray-biterum2 md:bg-transparent md:hover:text-green-biterum md:text-white md:p-0"
+              aria-current="page"
+            >
+              Aktualności
+            </Navbar.Link>
+            <div className="flex py-2 pl-3 pr-4 transition ease-in-out duration-500 text-white border-b border-gray-100 rounded hover:bg-gray-biterum2 md:hover:text-green-biterum md:hover:bg-transparent md:border-0 md:text-white md:p-0"
+            onMouseEnter={() => {handleMouseEnter()}}>
               <Dropdown inline label="Produkty">
                 <Dropdown.Item
                   href="#"

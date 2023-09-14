@@ -47,7 +47,7 @@ export default function defaultFooter() {
               <div className="grid lg:md:grid-cols-2 lg:md:gap-16 lg:md:mt-2 sm:mt-4 sm:grid-cols-1 sm:gap-6">
                 <div>
                   <Footer.Title title="Szybki kontakt" />
-                  <div className="grid grid-cols-3 flex">
+                  <div className="grid grid-cols-3">
                     <div className="col-span-2 gap-2 flex items-center">
                       <Image
                         priority
@@ -121,7 +121,7 @@ export default function defaultFooter() {
                 <div>
                   <Footer.Title title="Dane firmy" />
                   <div className="grid grid-cols-2 gap-7">
-                    <div className="grid grid-row-4 gap-1 text-sm text-left flex">
+                    <div className="grid grid-row-4 gap-1 text-sm text-left">
                       <p className="font-semibold">
                         BITERUM Sp. z o. o. sp. k.
                       </p>
@@ -129,7 +129,7 @@ export default function defaultFooter() {
                       <p>61-003 Poznań</p>
                       <p className="">NIP 972-124-56-30</p>
                     </div>
-                    <div className="grid grid-row-4 gap-1 text-sm text-left flex">
+                    <div className="grid grid-row-4 gap-1 text-sm text-left">
                       <p className="font-semibold">MAGAZYN</p>
                       <p>ul. Św. Wincentego 10</p>
                       <p>61-003 Poznań</p>

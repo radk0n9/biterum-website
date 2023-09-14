@@ -11,6 +11,9 @@ const customTheme = {
       rightControl:
         "absolute top-0 right-0 flex h-full items-center justify-center px-4 focus:outline-none",
     },
+    item: {
+      wrapper: "w-full flex-shrink-0 transform cursor-grab snap-center",
+    },
     control: {
       base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-biterum3/60 group-hover:bg-gray-biterum6/80 group-focus:outline-none group-focus:ring-4 group-focus:ring-gray-biterum10 sm:h-10 sm:w-10",
       icon: "h-5 w-5 text-white dark:text-gray-800 sm:h-6 sm:w-6",
