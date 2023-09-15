@@ -1,6 +1,7 @@
 import { getPosts } from "./get-posts";
 import NewsArticle from "@/components/news-article";
 import path from "path";
+import { v4 as uuidv4 } from "uuid";
 
 export default function News() {
   const postsDirectory = path.join(process.cwd(), "app/aktualnosci/posts");
@@ -23,6 +24,7 @@ export default function News() {
       <div className="flex flex-col gap-10">
         {allPosts.map((post, index) => (
           <NewsArticle
+            key={uuidv4()}
             index={index}
             date={post.data.date}
             title={post.data.title}
