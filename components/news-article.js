@@ -64,7 +64,7 @@ export default function NewsArticle(props) {
                 .slice(0, 3)
                 .map((image) => (
                   <Image
-                    src={`/aktualnosci/${props.id}/images/${image}.jpg`}
+                    src={`/images-aktualnosci/${props.id}/images/${image}.jpg`}
                     alt={`${image}`}
                     width={600}
                     height={600}
@@ -86,7 +86,7 @@ export default function NewsArticle(props) {
                 .slice(0, 3)
                 .map((image, index) => (
                   <Image
-                    src={`/aktualnosci/${props.id}/images/${image}.jpg`}
+                    src={`/images-aktualnosci/${props.id}/images/${image}.jpg`}
                     alt={`${image}`}
                     width={500}
                     height={500}
@@ -106,7 +106,7 @@ export default function NewsArticle(props) {
                     : "animate-jump-out animate-once animate-duration-[550ms] animate-ease-in-out animate-normal"
                 } ${isHidden ? "hidden" : ""}`}
               >
-                <Link href={`aktualnosci/posts/${props.id}`} prefetch={false}>
+                <Link href={`/aktualnosci/posts/${props.id}`} prefetch={false}>
                   Zobacz więcej
                 </Link>
               </button>

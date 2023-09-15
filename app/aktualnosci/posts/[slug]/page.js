@@ -37,7 +37,7 @@ export default function Page({ params }) {
               {Array.isArray(post.data.image) &&
                 post.data.image.map((image) => (
                   <Image
-                    src={`/aktualnosci/${post.id}/images/${image}.jpg`}
+                    src={`/images-aktualnosci/${post.id}/images/${image}.jpg`}
                     alt={`${image}`}
                     width={500}
                     height={500}
