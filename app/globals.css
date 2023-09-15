@@ -10,3 +10,7 @@ body {
   background-color: #afcb08;
   background-image: linear-gradient(160deg, #afcb08 0%, #6c7e00 100%);
 }
+
+.p-format p {
+  line-height: 1.5rem;
+}

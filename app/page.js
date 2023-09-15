@@ -1,10 +1,14 @@
 import Carousel from "@/components/carousel";
-import { getItems } from "@/components/itemsM";
+import { getItems } from "@/components/get-items";
 import Card from "@/components/card";
 import { v4 as uuidv4 } from "uuid";
+import path from "path";
 
 export default function Home() {
-  const allItems = getItems();
+
+  const itemsDirectory = path.join(process.cwd(), "components/itemsM");
+  const allItems = getItems(itemsDirectory);
+
   return (
     <>
       <article className="pt-4 pb-6 h-56 sm:h-64 xl:h-80 2xl:h-96">

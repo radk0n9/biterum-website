@@ -23,6 +23,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        'gray-biterum1': '#dadada4a',
         'gray-biterum2': '#aeb0b7',
         'gray-biterum3': '#a0a3ab',
         'gray-biterum4': '#93969f',
@@ -57,5 +58,6 @@ module.exports = {
   plugins: [
     require('flowbite/plugin'),
     require('tw-elements/dist/plugin'),
+    require('tailwindcss-animated'),
   ],
 }
