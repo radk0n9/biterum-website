@@ -5,7 +5,9 @@ import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 
 export default function Page({ params }) {
-  const nameOfPost = params.slug;
+  const nameOfPost = params.id;
+  
+  console.log(params.id)
 
   const itemsDirectory = path.join(
     process.cwd(),

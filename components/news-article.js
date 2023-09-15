@@ -106,9 +106,9 @@ export default function NewsArticle(props) {
                     : "animate-jump-out animate-once animate-duration-[550ms] animate-ease-in-out animate-normal"
                 } ${isHidden ? "hidden" : ""}`}
               >
-                <Link href={`/aktualnosci/posts/${props.id}`} prefetch={false}>
+                <a href={`/aktualnosci/${props.id}`}>
                   Zobacz więcej
-                </Link>
+                </a>
               </button>
             </div>
           </div>
