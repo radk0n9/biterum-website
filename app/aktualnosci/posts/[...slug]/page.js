@@ -9,8 +9,9 @@ export default function Page({ params }) {
 
   const itemsDirectory = path.join(
     process.cwd(),
-    `app/aktualnosci/posts/${nameOfPost}`,
+    `/app/aktualnosci/posts/${nameOfPost}`,
   );
+  
   const postData = getItems(itemsDirectory);
 
   return (
