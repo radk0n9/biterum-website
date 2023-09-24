@@ -1,13 +1,12 @@
 import path from "path";
 import { getItems } from "@/components/get-items";
-import Image from "next/image";
+import ImageGallery from "@/components/image-gallery";
+import DefaultBreadcrumb from "@/components/breadcrumb";
 import { v4 as uuidv4 } from "uuid";
 import Link from "next/link";
 
 export default function Page({ params }) {
   const nameOfPost = params.id;
-  
-  console.log(params.id)
 
   const itemsDirectory = path.join(
     process.cwd(),
@@ -18,13 +17,13 @@ export default function Page({ params }) {
 
   return (
     <>
-      <Link href={`/aktualnosci`}>Powrót</Link>
       <div className="flex flex-col gap-10">
         {postData.map((post, index) => (
           <article
             key={uuidv4()}
-            className="p-format flex flex-col gap-2 py-8 md:gap-6"
+            className="p-format flex flex-col gap-2 pb-6 pt-4 md:gap-6"
           >
+          <DefaultBreadcrumb title={post.data.title}/>
             <div className={`flex flex-col gap-3 p-1`}>
               <p className="text-xs italic">{post.data.date}</p>
               <h2 className="text-lg font-semibold">{post.data.title}</h2>
@@ -36,7 +35,8 @@ export default function Page({ params }) {
                 Kontakt:<a href={`tel:+48${post.data.tel}`}> {post.data.tel}</a>
               </p>
             </div>
-            <div className="flex flex-wrap">
+            <ImageGallery images={post.data.image.map((image) => `/images-aktualnosci/${post.id}/images/${image}.jpg`)} />
+            {/* <div className="flex flex-wrap">
               {Array.isArray(post.data.image) &&
                 post.data.image.map((image) => (
                   <Image
@@ -49,7 +49,7 @@ export default function Page({ params }) {
                     priority={true}
                   />
                 ))}
-            </div>
+            </div> */}
           </article>
         ))}
       </div>

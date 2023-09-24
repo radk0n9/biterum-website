@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function NewsArticle(props) {
@@ -20,7 +19,7 @@ export default function NewsArticle(props) {
 
   useEffect(() => {
     if (isAnimated) {
-        setIsHidden(true);
+      setIsHidden(true);
     }
   }, [isAnimated]);
 
@@ -90,26 +89,28 @@ export default function NewsArticle(props) {
                     alt={`${image}`}
                     width={500}
                     height={500}
-                    className={`max-h-36 rounded-md object-cover transition duration-500 delay-200 ease-in-out hover:scale-110 md:hover:scale-150 order-${index}`}
+                    className={`max-h-36 rounded-md object-cover transition duration-300 ease-in-out hover:scale-110 md:hover:z-10 md:hover:scale-150 order-${index}`}
                     key={uuidv4()}
                   />
                 ))}
             <div
               className={`flex items-center justify-center ${
-                props.index % 2 === 0 ? "md:order-1 order-3" : "md:order-2 order-3"
+                props.index % 2 === 0
+                  ? "order-3 md:order-1"
+                  : "order-3 md:order-2"
               }`}
             >
-              <button
-                className={`rounded-full bg-green-biterum px-4 py-2 text-[1.15rem] ${
+              <div
+                className={`${
                   isAnimated
-                    ? "animate-jump-in animate-once animate-duration-[550ms] animate-ease-in-out animate-normal"
-                    : "animate-jump-out animate-once animate-duration-[550ms] animate-ease-in-out animate-normal"
+                    ? "animate-jump-in animate-normal animate-duration-[550ms] animate-once animate-ease-in-out"
+                    : "animate-jump-out animate-normal animate-duration-[550ms] animate-once animate-ease-in-out"
                 } ${isHidden ? "hidden" : ""}`}
               >
-                <a href={`/aktualnosci/${props.id}`}>
-                  Zobacz więcej
-                </a>
-              </button>
+                <button className="rounded-full bg-green-biterum px-4 py-2 text-[1.15rem] transition duration-300 ease-in-out hover:-translate-y-3 hover:scale-105 ">
+                  <a href={`/aktualnosci/${props.id}`}>Zobacz więcej</a>
+                </button>
+              </div>
             </div>
           </div>
         )}

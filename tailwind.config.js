@@ -13,14 +13,6 @@ module.exports = {
     './node_modules/tw-elements/dist/js/**/*.js',
   ],
   theme: {
-    screens:{
-      'xs': '300px',
-      ...defaultTheme.screens,
-    },
-    listStyleType: {
-      'square': 'square',
-      ...defaultTheme.listStyleType,
-    },
     extend: {
       colors: {
         'gray-biterum1': '#dadada4a',
@@ -51,6 +43,15 @@ module.exports = {
       },
       boxShadow: {
         'upside-down-md': '0 0px 0px -1px rgb(0 0 0 / 0.1), 0 -6px 4px -2px rgb(0 0 0 / 0.1)',
+      },
+      listStyleType: {
+        'square': 'square',
+      },
+      maxWidth: {
+        '1/2': '50%',
+      },
+      maxHeight: {
+        '1/2': '50%',
       }
     },
    
