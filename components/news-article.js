@@ -5,35 +5,12 @@ import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
 
 export default function NewsArticle(props) {
-  const [isAnimated, updateAnimated] = useState(false);
-  const [isHidden, setIsHidden] = useState(true);
-
-  const runAnimation = () => {
-    setIsHidden(false);
-    updateAnimated(true);
-  };
-
-  const stopAnimation = () => {
-    updateAnimated(false);
-  };
-
-  useEffect(() => {
-    if (isAnimated) {
-      setIsHidden(true);
-    }
-  }, [isAnimated]);
-
   return (
     <>
       <article
+        id={props.id}
         key={uuidv4()}
-        className="p-format grid grid-cols-1 gap-2 rounded-xl bg-gray-biterum1 px-3 py-8 shadow-xl md:grid-cols-2 md:gap-6"
-        onMouseEnter={() => {
-          runAnimation();
-        }}
-        onMouseLeave={() => {
-          stopAnimation();
-        }}
+        className="group-hover p-format grid grid-cols-1 gap-2 rounded-xl bg-gray-biterum1 px-3 py-8 shadow-xl md:grid-cols-2 md:gap-6"
       >
         <div
           className={`flex flex-col gap-3 ${
@@ -89,7 +66,7 @@ export default function NewsArticle(props) {
                     alt={`${image}`}
                     width={500}
                     height={500}
-                    className={`max-h-36 rounded-md object-cover transition duration-300 ease-in-out hover:scale-110 md:hover:z-10 md:hover:scale-150 order-${index}`}
+                    className={`max-h-36 rounded-md object-cover transition duration-300 ease-in-out order-${index}`}
                     key={uuidv4()}
                   />
                 ))}
@@ -100,17 +77,9 @@ export default function NewsArticle(props) {
                   : "order-3 md:order-2"
               }`}
             >
-              <div
-                className={`${
-                  isAnimated
-                    ? "animate-jump-in animate-normal animate-duration-[550ms] animate-once animate-ease-in-out"
-                    : "animate-jump-out animate-normal animate-duration-[550ms] animate-once animate-ease-in-out"
-                } ${isHidden ? "hidden" : ""}`}
-              >
-                <button className="rounded-full bg-green-biterum px-4 py-2 text-[1.15rem] transition duration-300 ease-in-out hover:-translate-y-3 hover:scale-105 ">
-                  <a href={`/aktualnosci/${props.id}`}>Zobacz więcej</a>
-                </button>
-              </div>
+              <button className="rounded-full bg-green-biterum px-4 py-2 text-[1.15rem] transition duration-300 ease-in-out hover:-translate-y-2 hover:scale-105 ">
+                <a href={`/aktualnosci/${props.id}`}>Zobacz więcej</a>
+              </button>
             </div>
           </div>
         )}
@@ -118,3 +87,4 @@ export default function NewsArticle(props) {
     </>
   );
 }
+// ${isHidden ? "" : ""}

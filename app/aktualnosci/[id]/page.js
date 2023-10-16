@@ -23,7 +23,7 @@ export default function Page({ params }) {
             key={uuidv4()}
             className="p-format flex flex-col gap-2 pb-6 pt-4 md:gap-6"
           >
-          <DefaultBreadcrumb title={post.data.title}/>
+          <DefaultBreadcrumb title={post.data.title} id={post.id}/>
             <div className={`flex flex-col gap-3 p-1`}>
               <p className="text-xs italic">{post.data.date}</p>
               <h2 className="text-lg font-semibold">{post.data.title}</h2>

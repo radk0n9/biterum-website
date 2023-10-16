@@ -4,18 +4,15 @@ import { Breadcrumb } from 'flowbite-react';
 
 // dodac wieksza czcionke 
 
-export default function DefaultBreadcrumb(title) {
-    const nameOfPost = title.title
+export default function DefaultBreadcrumb(props) {
   return (
     <Breadcrumb> 
-      <Breadcrumb.Item href="/aktualnosci">
+      <Breadcrumb.Item href={`/aktualnosci/#${props.id}`}>
         Aktualności 
       </Breadcrumb.Item>
       <Breadcrumb.Item>
-        {nameOfPost}
+        {props.title}
       </Breadcrumb.Item>
     </Breadcrumb>
   )
 }
-
-
