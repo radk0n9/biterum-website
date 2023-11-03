@@ -3,7 +3,6 @@ import { getItems } from "@/components/get-items";
 import ImageGallery from "@/components/image-gallery";
 import DefaultBreadcrumb from "@/components/breadcrumb";
 import { v4 as uuidv4 } from "uuid";
-import Link from "next/link";
 
 export default function Page({ params }) {
   const nameOfPost = params.id;
@@ -36,20 +35,6 @@ export default function Page({ params }) {
               </p>
             </div>
             <ImageGallery images={post.data.image.map((image) => `/images-aktualnosci/${post.id}/images/${image}.jpg`)} />
-            {/* <div className="flex flex-wrap">
-              {Array.isArray(post.data.image) &&
-                post.data.image.map((image) => (
-                  <Image
-                    src={`/images-aktualnosci/${post.id}/images/${image}.jpg`}
-                    alt={`${image}`}
-                    width={500}
-                    height={500}
-                    className="w-full lg:w-1/3 md:w-1/2 p-1 object-cover"
-                    key={uuidv4()}
-                    priority={true}
-                  />
-                ))}
-            </div> */}
           </article>
         ))}
       </div>

@@ -7,7 +7,7 @@ import { Breadcrumb } from 'flowbite-react';
 export default function DefaultBreadcrumb(props) {
   return (
     <Breadcrumb> 
-      <Breadcrumb.Item href={`/aktualnosci/#${props.id}`}>
+      <Breadcrumb.Item href={`/aktualnosci/#${props.id}`} >
         Aktualności 
       </Breadcrumb.Item>
       <Breadcrumb.Item>

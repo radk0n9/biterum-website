@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 
@@ -9,7 +9,6 @@ export default function ImageGallery({ images }) {
   const [isVisible, setVisible] = useState(false);
 
   const openImage = (index) => {
-    console.log(openImage);
     setShowImage(index);
   };
 
@@ -29,6 +28,7 @@ export default function ImageGallery({ images }) {
               <Image
                 src={image}
                 loading="eager"
+              priority={true}
                 width={500}
                 height={500}
                 alt={`${image}`}
@@ -56,13 +56,11 @@ export default function ImageGallery({ images }) {
         >
           <div className="max-h-screen p-10">
             {/* <button className="fixed">Close</button> */}
-            <Image
-              src={images[showImage]}
-              alt={showImage}
-              width={500}
-              height={500}
+            <img
+              src={isVisible ? images[showImage] : undefined}
+              alt={`${images[showImage]}`}
               onClick={() => closeImage(showImage)}
-              className="max-h-full max-w-full cursor-pointer"
+              className="max-h-full max-w-full  w-auto h-auto cursor-pointer"
             />
           </div>
         </div>
