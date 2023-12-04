@@ -28,7 +28,7 @@ export default function ImageGallery({ images }) {
               <Image
                 src={image}
                 loading="eager"
-              priority={true}
+                priority={true}
                 width={500}
                 height={500}
                 alt={`${image}`}
@@ -55,9 +55,10 @@ export default function ImageGallery({ images }) {
           }}
         >
           <div className="max-h-screen p-10">
-            {/* <button className="fixed">Close</button> */}
-            <img
+            <Image
               src={isVisible ? images[showImage] : undefined}
+              width={500}
+              height={500}
               alt={`${images[showImage]}`}
               onClick={() => closeImage(showImage)}
               className="max-h-full max-w-full  w-auto h-auto cursor-pointer"

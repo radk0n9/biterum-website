@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Dropdown, Navbar, Flowbite } from "flowbite-react";
-import { useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const customTheme = {
   navbar: {
@@ -27,26 +27,90 @@ const customTheme = {
   },
 };
 
-export default function defaultNavbar() {
-  // const handleMouseEnter = (event) => {
-  //   const button = event.target.click();
-  // };
+export default function DefaultNavbar() {
 
-  // const handleMouseLeave = (event) => {
-  //  const targetName = event.target.localName;
-  //  console.log(targetName)
-  //  if (targetName === "a" || targetName === "div" || targetName === "svg"){
-  //   document.querySelector("body > nav > div > div > ul > div > div > div > button").click()
-  //  }
-  // 
-
+  const ref = useRef(null);
   const [dropDownShown, setDropDown] = useState(false);
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
 
-  const handleMouseEnter = (event) => {
-    const button = event;
-    console.log(button.pageX)
-    // button.getBoundingClientRect()
-    setDropDown(true)
+  
+
+  useLayoutEffect(() => {
+    if (ref.current) {
+      const originalClasses = ref.current.className;
+
+      ref.current.className = "";
+
+      setWidth(ref.current.clientWidth);
+      setHeight(ref.current.clientHeight);
+
+      ref.current.className = originalClasses;
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const buttonElement = document.querySelector('.dropDown-button');
+      const dropdownElement = document.querySelector('.dropDown');
+
+      if (buttonElement && dropdownElement) {
+
+        const rect = buttonElement.getBoundingClientRect();
+
+        const dropdownMetrics = () => {
+          var orignalDisplay = dropdownElement.style.display;
+          var originalVisibility = dropdownElement.style.visibility;
+
+          dropdownElement.style.display = "block";
+          dropdownElement.style.visibility = "hidden";
+
+          var offsetWidth = dropdownElement.offsetWidth;
+          var offsetLeft = dropdownElement.offsetLeft;
+          dropdownElement.style.display = orignalDisplay;
+          dropdownElement.style.visibility = originalVisibility;
+          
+          return {
+            width: offsetWidth,
+            left: offsetLeft
+          };
+          
+        };
+
+        let left = rect.left + rect.width / 2 - dropdownMetrics().width / 2;
+    
+        if (left + dropdownMetrics().width > window.innerWidth) {
+          left = window.innerWidth - dropdownMetrics().width - 5;
+        }
+
+        dropdownElement.style.transform = `translate(${left}px, ${rect.top + rect.height + 5}px)`;
+
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [width]);
+
+
+  let tiemoutHideDropdown;
+
+  const handleMouseLeave = (event) => {
+    tiemoutHideDropdown = setTimeout(() => {
+      setDropDown(false);
+    }, 300);
+  };
+
+  const handleMouseOver = (event) => {
+    clearTimeout(tiemoutHideDropdown);
+    
+    if (!dropDownShown) {
+
+      setDropDown(true);
+      const myDropDown = document.getElementsByClassName("dropDown");
+    }
   };
 
   return (
@@ -78,64 +142,52 @@ export default function defaultNavbar() {
             >
               Aktualności
             </Navbar.Link>
-            <div
-              className="flex rounded border-b border-gray-100 py-2 pl-3 pr-4 text-white transition duration-500 ease-in-out hover:bg-gray-biterum2 md:border-0 md:p-0 md:text-white md:hover:bg-transparent md:hover:text-green-biterum"
-            >
-              <div>
-                <Dropdown inline label="Produkty">
-                  <Dropdown.Item
-                    href="#"
-                    className="block px-4 py-2 hover:text-green-biterum"
-                  >
-                    Produkt1
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    href="#"
-                    className="block px-4 py-2 hover:text-green-biterum"
-                  >
-                    Produkt2
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    href="#"
-                    className="block px-4 py-2 hover:text-green-biterum"
-                  >
-                    Produkt3
-                  </Dropdown.Item>
-                </Dropdown>
-              </div>
-            </div>
-            <div
-              className="flex rounded border-b border-gray-100 py-2 pl-3 pr-4 text-white transition duration-500 ease-in-out hover:bg-gray-biterum2 md:border-0 md:p-0 md:text-white md:hover:bg-transparent md:hover:text-green-biterum"
-              onMouseEnter={(event) => {
-                handleMouseEnter(event);
-              }}
-            >
-            
-              <button>Produkty</button>
-              <div className="absolute left-0 top-0 min-w-[95px] z-fit rounded-lg divide-y divide-gray-100 shadow focus:outline-none transition-opacity duration-100 border-gray-200 bg-white text-gray-900">
-              {dropDownShown ?
-                <li>
-                  <a href="#">Test</a>
-                </li>
-                : null
-              }
+            <div className="dropDown-button flex rounded border-b border-gray-100 py-2 pl-3 pr-4 text-white transition duration-300 ease-in-out hover:bg-gray-biterum2 md:border-0 md:p-0 md:text-white md:hover:bg-transparent md:hover:text-green-biterum">
+              <div onMouseLeave={(event) => handleMouseLeave(event)}>
+                <button
+                  onMouseOver={(event) => handleMouseOver(event)}
+                  className="flex items-center outline-none"
+                >
+                  <span>Produkty</span>
+                </button>
+                <div
+                  aria-expanded={dropDownShown}
+                  className={`dropDown z-10 w-fit divide-y divide-gray-100 rounded-lg border border-gray-200 bg-white text-gray-700 shadow-xl focus:outline-none ${
+                    dropDownShown
+                      ? `absolute left-0 top-0`
+                      : `hidden`
+                  } `}
+                  onMouseOver={() => handleMouseOver()}
+                  ref={ref}
+                >
+                  <ul className={`py-1 focus:outline-none`}>
+                    <li className="">
+                      <a
+                        href="#"
+                        className="block w-full cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-green-biterum focus:bg-gray-400 focus:outline-none transition-colors ease-in-out duration-300"
+                      >
+                        Produkt1
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <Navbar.Link
               href="/galeria"
-              className="block rounded py-2 pl-3 pr-4 text-white hover:bg-gray-biterum2 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-green-biterum"
+              className="easy-in-out block rounded py-2 pl-3 pr-4 text-white transition-colors duration-300 hover:bg-gray-biterum2 md:bg-transparent md:p-0 md:text-white md:hover:text-green-biterum"
             >
               Galeria
             </Navbar.Link>
             <Navbar.Link
               href="/faq"
-              className="block rounded py-2 pl-3 pr-4 text-white hover:bg-gray-biterum2 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-green-biterum"
+              className="easy-in-out block rounded py-2 pl-3 pr-4 text-white transition-colors duration-300 hover:bg-gray-biterum2 md:bg-transparent md:p-0 md:text-white md:hover:text-green-biterum"
             >
               FAQ
             </Navbar.Link>
             <Navbar.Link
               href="/kontakt"
-              className="block rounded py-2 pl-3 pr-4 text-white hover:bg-gray-biterum2 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-green-biterum"
+              className="easy-in-out block rounded py-2 pl-3 pr-4 text-white transition-colors duration-300 hover:bg-gray-biterum2 md:bg-transparent md:p-0 md:text-white md:hover:text-green-biterum"
             >
               Kontakt
             </Navbar.Link>
@@ -145,5 +197,3 @@ export default function defaultNavbar() {
     </Flowbite>
   );
 }
-
-
