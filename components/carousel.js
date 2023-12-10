@@ -20,7 +20,7 @@ const customTheme = {
     },
   },
 };
-
+//SCROL DO NAPRAWY, MOŻNA PRZEWUJAĆ OBRAZKI
 export default function SlidingInterval() {
   return (
     <Flowbite theme={{ theme: customTheme }}>
