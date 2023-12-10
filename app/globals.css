@@ -14,3 +14,7 @@ body {
 .p-format p {
   line-height: 1.5rem;
 }
+
+.hackChild > :first-child {
+  overflow: auto;
+}

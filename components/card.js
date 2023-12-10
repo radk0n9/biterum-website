@@ -4,6 +4,7 @@ import { debounce } from "debounce";
 import { Card, Flowbite } from "flowbite-react";
 import Image from "next/image";
 import { useState } from "react";
+import {mobileChecker} from "@/components/mobile-checker"
 
 const customTheme = {
   card: {
@@ -14,23 +15,6 @@ const customTheme = {
     },
   },
 };
-
-const checkMobile = () => {
-  try {
-    const isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
-    if (isMobileDevice) {
-      return true;
-    } else {
-      return false;
-    }
-  } catch (ReferenceError) {
-    return false;
-  } finally {
-    null;
-  }
-};
-
-checkMobile();
 
 export default function CardWithImageAndButoon(props) {
   const [show, updateShow] = useState(false);
@@ -58,15 +42,15 @@ export default function CardWithImageAndButoon(props) {
         <article>
           <Card
             onClick={() => {
-              checkMobile() ? handleClickMobile() : null;
+              mobileChecker() ? handleClickMobile() : null;
             }}
             onMouseEnter={() => {
-              checkMobile()
+              mobileChecker()
                 ? null
                 : handleMouseEnter();
             }}
             onMouseLeave={() => {
-              checkMobile()
+              mobileChecker()
                 ? null
                 : handleMouseLeave();
             }}

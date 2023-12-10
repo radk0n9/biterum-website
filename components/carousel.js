@@ -24,7 +24,7 @@ const customTheme = {
 export default function SlidingInterval() {
   return (
     <Flowbite theme={{ theme: customTheme }}>
-      <Carousel slideInterval={5000}>
+      <Carousel slideInterval={5000} className="hackChild">
         <Image
           src="/biterum-cs4.jpg"
           alt="biterum-cs4"
