@@ -18,38 +18,44 @@ const customTheme = {
       base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-biterum3/60 group-hover:bg-gray-biterum6/80 group-focus:outline-none group-focus:ring-4 group-focus:ring-gray-biterum10 sm:h-10 sm:w-10",
       icon: "h-5 w-5 text-white dark:text-gray-800 sm:h-6 sm:w-6",
     },
+    scrollContainer: {
+      base: "flex h-full snap-mandatory scroll-smooth rounded-lg",
+      snap: "snap-x",
+    },
   },
 };
-//SCROL DO NAPRAWY, MOŻNA PRZEWUJAĆ OBRAZKI
+
 export default function SlidingInterval() {
   return (
-    <Flowbite theme={{ theme: customTheme }}>
-      <Carousel slideInterval={5000} className="hackChild">
-        <Image
-          src="/biterum-cs4.jpg"
-          alt="biterum-cs4"
-          height={960}
-          width={480}
-        />
-        <Image
-          alt="biterum-cs2"
-          src="/biterum-cs2.jpg"
-          height={960}
-          width={480}
-        />
-        <Image
-          alt="biterum-cs1"
-          src="/biterum-cs1.jpg"
-          height={960}
-          width={480}
-        />
-        <Image
-          alt="biterum-cs3"
-          src="/biterum-cs3.jpg"
-          height={960}
-          width={480}
-        />
-      </Carousel>
-    </Flowbite>
+    <>
+      <Flowbite theme={{ theme: customTheme }}>
+        <Carousel slideInterval={5000} className="hackChild">
+          <Image
+            src="/biterum-cs4.jpg"
+            alt="biterum-cs4"
+            height={1000}
+            width={1000}
+          />
+          <Image
+            alt="biterum-cs2"
+            src="/biterum-cs2.jpg"
+            height={1000}
+            width={1000}
+          />
+          <Image
+            alt="biterum-cs1"
+            src="/biterum-cs1.jpg"
+            height={960}
+            width={480}
+          />
+          <Image
+            alt="biterum-cs3"
+            src="/biterum-cs3.jpg"
+            height={1000}
+            width={1000}
+          />
+        </Carousel>
+      </Flowbite>
+    </>
   );
 }

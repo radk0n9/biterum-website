@@ -16,5 +16,5 @@ body {
 }
 
 .hackChild > :first-child {
-  overflow: auto;
+  overflow-x: auto;
 }

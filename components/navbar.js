@@ -76,18 +76,22 @@ export default function DefaultNavbar() {
 
           const result = {
             originalDisplay,
-            originalVisibility
+            originalVisibility,
           };
 
           return result;
         };
-        
+
         const dropdownMetrics = () => {
-          const {originalDisplay, originalVisibility} = setStyles(dropdownElement, "block", "hidden");
+          const { originalDisplay, originalVisibility } = setStyles(
+            dropdownElement,
+            "block",
+            "hidden",
+          );
 
           var offsetWidth = dropdownElement.offsetWidth;
           var offsetLeft = dropdownElement.offsetLeft;
-          
+
           setStyles(dropdownElement, originalDisplay, originalVisibility);
 
           return {
@@ -97,22 +101,26 @@ export default function DefaultNavbar() {
         };
 
         const dropdownMetricsMobile = () => {
-          const {originalDisplay, originalVisibility} = setStyles(navbarCollapse, "block", "hidden");
+          const { originalDisplay, originalVisibility } = setStyles(
+            navbarCollapse,
+            "block",
+            "hidden",
+          );
 
           let rectButtonElement = buttonElement.getBoundingClientRect();
-          let left = rectButtonElement.left
-          let top = rectButtonElement.top
-          let height = rectButtonElement.height
+          let left = rectButtonElement.left;
+          let top = rectButtonElement.top;
+          let height = rectButtonElement.height;
 
           setStyles(navbarCollapse, originalDisplay, originalVisibility);
 
-          dropdownElement.style.transform = `translate(${left}px, ${top + height - 5}px)`;
+          dropdownElement.style.transform = `translate(${left}px, ${
+            top + height - 5
+          }px)`;
         };
 
         if (mobileChecker()) {
-
           dropdownMetricsMobile();
-
         } else {
           let left = rect.left + rect.width / 2 - dropdownMetrics().width / 2;
 
@@ -120,7 +128,9 @@ export default function DefaultNavbar() {
             left = window.innerWidth - dropdownMetrics().width - 5;
           }
 
-          dropdownElement.style.transform = `translate(${left}px, ${rect.top + rect.height - 5}px)`;
+          dropdownElement.style.transform = `translate(${left}px, ${
+            rect.top + rect.height - 5
+          }px)`;
         }
       }
     };
@@ -149,66 +159,68 @@ export default function DefaultNavbar() {
   };
 
   return (
-    <Flowbite theme={{ theme: customTheme }}>
-      <Navbar className="mx-auto bg-gray-biterum14 py-2">
-        <Navbar.Brand href="/">
-          <Image
-            src="/biterum-logo.png"
-            alt="biterum-logo"
-            priority={true}
-            width={105} //230
-            height={49} //101
-            className="rounded bg-white p-0.5"
-          />
-        </Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="navbar-collapse">
-          <Navbar.Link href="/" className="" aria-current="page">
-            Główna
-          </Navbar.Link>
-          <Navbar.Link href="/aktualnosci" className="">
-            Aktualności
-          </Navbar.Link>
-          <div className="dropDown-button block rounded border-b border-gray-100 py-3 text-white transition duration-300 ease-in-out hover:bg-gray-biterum2 hover:bg-transparent md:border-0 md:text-white md:hover:bg-transparent md:hover:text-green-biterum">
-            <div onMouseLeave={(event) => handleMouseLeave(event)}>
-              <button
-                onMouseOver={(event) => handleMouseOver(event)}
-                className="flex items-center outline-none"
-              >
-                <span>Produkty</span>
-              </button>
-              <div
-                aria-expanded={dropDownShown}
-                className={`dropDown z-10 w-fit scale-125 divide-y divide-gray-100 rounded-lg border border-gray-200 bg-white text-gray-700 shadow-xl focus:outline-none ${
-                  dropDownShown ? `absolute left-0 top-0` : `hidden`
-                } `}
-                onMouseOver={() => handleMouseOver()}
-                ref={ref}
-              >
-                <ul className={`py-1 focus:outline-none`}>
-                  <li className="">
-                    <a
-                      href="#"
-                      className="block w-full cursor-pointer rounded border-b border-gray-100 px-3 py-1 text-sm text-gray-700 transition-colors duration-300 ease-in-out hover:bg-gray-100 hover:bg-transparent hover:text-green-biterum focus:bg-gray-400 focus:outline-none md:border-0 md:hover:bg-transparent md:hover:text-green-biterum"
-                    >
-                      Produkt1
-                    </a>
-                  </li>
-                </ul>
+    <>
+      <Flowbite theme={{ theme: customTheme }}>
+        <Navbar className="mx-auto bg-gray-biterum14 py-2">
+          <Navbar.Brand href="/">
+            <Image
+              src="/biterum-logo.png"
+              alt="biterum-logo"
+              priority={true}
+              width={105} //230
+              height={49} //101
+              className="rounded bg-white p-0.5"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Collapse className="navbar-collapse">
+            <Navbar.Link href="/" className="" aria-current="page">
+              Główna
+            </Navbar.Link>
+            <Navbar.Link href="/aktualnosci" className="">
+              Aktualności
+            </Navbar.Link>
+            <div className="dropDown-button block rounded border-b border-gray-100 py-3 text-white transition duration-300 ease-in-out hover:bg-gray-biterum2 hover:bg-transparent md:border-0 md:text-white md:hover:bg-transparent md:hover:text-green-biterum">
+              <div onMouseLeave={(event) => handleMouseLeave(event)}>
+                <button
+                  onMouseOver={(event) => handleMouseOver(event)}
+                  className="flex items-center outline-none"
+                >
+                  <a href="/produkty">Produkty</a>
+                </button>
+                <div
+                  aria-expanded={dropDownShown}
+                  className={`dropDown z-10 w-fit scale-125 divide-y divide-gray-100 rounded-lg border border-gray-200 bg-white text-gray-700 shadow-xl focus:outline-none ${
+                    dropDownShown ? `absolute left-0 top-0` : `hidden`
+                  } `}
+                  onMouseOver={() => handleMouseOver()}
+                  ref={ref}
+                >
+                  <ul className={`py-1 focus:outline-none`}>
+                    <li className="">
+                      <a
+                        href="#"
+                        className="block w-full cursor-pointer rounded border-b border-gray-100 px-3 py-1 text-sm text-gray-700 transition-colors duration-300 ease-in-out hover:bg-gray-100 hover:bg-transparent hover:text-green-biterum focus:bg-gray-400 focus:outline-none md:border-0 md:hover:bg-transparent md:hover:text-green-biterum"
+                      >
+                        Produkt1
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <Navbar.Link href="/galeria" className="">
-            Galeria
-          </Navbar.Link>
-          <Navbar.Link href="/faq" className="">
-            FAQ
-          </Navbar.Link>
-          <Navbar.Link href="/kontakt" className="">
-            Kontakt
-          </Navbar.Link>
-        </Navbar.Collapse>
-      </Navbar>
-    </Flowbite>
+            <Navbar.Link href="/galeria" className="">
+              Galeria
+            </Navbar.Link>
+            <Navbar.Link href="/faq" className="">
+              FAQ
+            </Navbar.Link>
+            <Navbar.Link href="/kontakt" className="">
+              Kontakt
+            </Navbar.Link>
+          </Navbar.Collapse>
+        </Navbar>
+      </Flowbite>
+    </>
   );
 }
