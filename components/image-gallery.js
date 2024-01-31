@@ -58,15 +58,14 @@ export default function ImageGallery({ images }) {
             closeImage(showImage);
           }}
         >
-          <div className="flex max-h-screen justify-center p-5">
+          <div className="absolute inset-0 h-full">
           {setImage ?
             <Image
               src={setImage ? images[showImage] : undefined}
-              width={500}
-              height={500}
+              fill={true}
               alt={`${images[showImage]}`}
               onClick={() => closeImage(showImage)}
-              className="h-auto max-h-full w-auto max-w-full cursor-pointer"
+              className="object-scale-down p-6"
             />
             : <></>
           }
